@@ -1,0 +1,47 @@
+* {
+  font-family: Montserrat;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../images/map-background.jpg");
+  background-repeat: no-repeat;
+  background-color: rgb(62, 139, 62);
+}
+
+.form-group {
+  margin: auto;
+  width: 500px;
+  height: 60px;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-field {
+  width: 100%;
+  padding: 10px 35px 10px 15px;
+  border: none;
+  border-radius: 100px;
+  outline: none;
+}
+
+.search-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -33px;
+}
+
+.search-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+.card {
+margin: auto
+
+}
