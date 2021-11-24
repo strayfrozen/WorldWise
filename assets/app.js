@@ -1,11 +1,14 @@
-const search = document.querySelector('.search-button')
-navigator.geolocation.getCurrentPosition(function (location) {
-    console.log('location :', location);
-},
-
-    function () { })
+//Geolocation
+if (navigator.geolocation)
+    navigator.geolocation.getCurrentPosition(function (location) {
+        console.log('location :', location);
+    },
+        function () {
+            alert('try again')
+        })
 
 //searchBar
+const search = document.querySelector('.search-button')
 search.addEventListener('click', function (event) {
     event.preventDefault()
     const input = document.querySelector('#search').value
