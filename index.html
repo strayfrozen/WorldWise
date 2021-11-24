@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets\css\style.css" />
-    <title>WorldWise</title>
-  </head>
 
-  <body>
-    <nav class="navBar">
-        <a href="#about">About Us</a>
-        <a href="#quiz">Quiz?</a>
-        <a href="#homepage">Homepage</a>
-    </nav>
-    <header class="pt-10 text-white text-center">
-      <h1 class="font-bold text-9xl tracking-widest">WorldWise</h1>
-      <h3>this explains what the app does</h3>
-    </header>
-    <br>
-    <div class="form-group text-center">
-      <form action="results.html" method="GET" class="form">
-        <input
-          id="search"
-          name="countries"
-          class="text search-field"
-          placeholder="Search Any Country Here!"
-        />
-        <button type="submit" class="search-button" id="btn">
-          <img src="assets/images/search.png" />
-        </button>
-      </form>
-    </div>
-    <hr class="mt-2 border-white h-1 bg-white overflow-hidden">
-    <div id="searches"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets\css\style.css" />
+  <title>WorldWise</title>
+</head>
 
-    <script src="assets\storage.js"></script>
-  </body>
+<body>
+  <nav class="navBar">
+    <a href="#about">About Us</a>
+    <a href="#quiz">Quiz?</a>
+    <a href="#homepage">Homepage</a>
+  </nav>
+  <header class="pt-10 text-white text-center">
+    <h1 class="font-bold text-9xl tracking-widest">WorldWise</h1>
+    <h3>this explains what the app does</h3>
+  </header>
+  <br>
+  <div class="form-group text-center">
+    <form action="results.html" method="GET" class="form">
+      <input id="search" name="countries" class="text search-field" placeholder="Search Any Country Here!" />
+      <button type="submit" class="search-button" id="btn">
+        <img src="assets/images/search.png" />
+      </button>
+    </form>
+  </div>
+  <hr class="mt-2 border-white h-1 bg-white overflow-hidden">
+  <div id="searches"></div>
+
+  <script src="assets\app.js"></script>
+  <script src="assets\storage.js"></script>
+</body>
+
 </html>
