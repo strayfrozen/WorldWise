@@ -1,7 +1,9 @@
 var APIUrl = 'https://restcountries.com/v3.1/name/{countryname}'
 
 var countryContainer = document.getElementById('countryContainer')
-var displayedData = document.getElementById('displayed-data')
+var displayedData = document.getElementById('displayed-data-flag')
+var displayedDataName = document.getElementById('displayed-data-name')
+var displayedDataCoatOfArms = document.getElementById('displayed-data-coatOfArms')
 
 //This code collects user input and stores it into local storage 
 
@@ -70,14 +72,20 @@ function getCountryData(id) {
             
             console.log(`${id}'s data`, data);
             displayedData.textContent=''
+            displayedDataName.textContent=''
+            displayedDataCoatOfArms.textContent=''
 
             var currentCountry = document.createElement('h1')
             currentCountry.textContent= data[0].name.common
-            displayedData.prepend(currentCountry)
+            displayedDataName.prepend(currentCountry)
 
             var flag = document.createElement('img')
-            flag.setAttribute('src', data[0].flags.png)
+            flag.setAttribute('src', data[0].coatOfArms.png)
             displayedData.append(flag)
+
+            var coatOfArms = document.createElement('img')
+            coatOfArms.setAttribute('src', data[0].flags.png)
+            displayedDataCoatOfArms.append(coatOfArms)
 
             // display data
         })
@@ -87,20 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("btn").addEventListener('click', getCountry);
 });
 
+//Get data to results function
 
-/*//This code appends localStorage data to page
 
-let displayData = ()=>{
-var info = localStorage.getItem('MyCountryList', JSON.stringify(Countries) );
-console.log(info);
-var countryCard = document.createElement('div')
-countryCard.setAttribute('class', 'card')
-countryContainer.append(countryCard)
 
-var countryName = document.createElement('h3')
-        countryName.textContent = 'Country Name: ' + info
-        countryCard.prepend(countryName)
 
-}
-
-displayData();*/
