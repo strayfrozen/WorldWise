@@ -2,10 +2,10 @@
 if (navigator.geolocation)
     navigator.geolocation.getCurrentPosition(function (location) {
         console.log('location :', location);
-    },
-        function () {
-            alert('try again')
-        })
+        let { longitude } = location.coords
+        let { latitude } = location.coords
+        console.log(`longitude:${longitude} & latitude ${latitude}`);
+    })
 
 //searchBar
 const search = document.querySelector('.search-button')
@@ -21,10 +21,11 @@ async function fetchData(countries) {
     let response = await fetch(`https://restcountries.com/v3.1/name/${countries}`)
     let data = await response.json()
     console.log(data)
+    console.log();
 
-    let gMapUrl = data.maps.google
-    let gMapResponse = await fetch(gMapUrl)
-    let gMapData = await gMapResponse.json()
+    // let detailUrl =data.maps.googleMaps
+    // let detailResponse = await fetch(detailUrl)
+    // let detailData = await detailResponse.json()
     // console.log('detailData: ', detailData);
     // console.log(detailData[0]);
     // var dataElem = document.createElement('div')
