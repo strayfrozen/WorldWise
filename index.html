@@ -15,12 +15,12 @@
   <body>
     <nav class="navBar">
         <a href="#about">About Us</a>
-        <a href="#quiz">Quiz?</a>
+        <a href="#map">Interactive Map</a>
         <a href="#homepage">Homepage</a>
     </nav>
     <header class="pt-10 text-white text-center">
       <h1 class="font-bold text-9xl tracking-widest">WorldWise</h1>
-      <h3>this explains what the app does</h3>
+      <h3>Learn about about the world around you!</h3>
     </header>
     <br>
     <div class="form-group text-center">
@@ -38,7 +38,23 @@
     </div>
     <hr class="mt-2 border-white h-1 bg-white overflow-hidden">
     <div id="searches"></div>
-
-    <script src="assets\storage.js"></script>
+    
+      <!-- possibly create grid of cards here for individual search results -->
+      <div id="grid-wrapper">
+  
+        <div class="grid-cell bg-white" id="cell1">1</div>
+        <div class="grid-cell bg-white" id="cell2">2</div>
+        <div class="grid-cell bg-white" id="cell3">3</div>
+        <div class="grid-cell bg-white" id="cell4">4</div>
+        <div class="grid-cell bg-white" id="cell5">5</div>
+        <div class="grid-cell bg-white" id="cell6">6</div>
+          
+        </div>
+      </div>
+      <!-- test data push here!! until grid is ready -->
+    <article class="card">
+      <output name="countries"> </output>
+    </article>
+    <script src="assets\js\storage.js"></script>
   </body>
 </html>
