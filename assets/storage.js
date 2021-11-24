@@ -1,23 +1,31 @@
 var APIUrl = 'https://restcountries.com/v3.1/name/{countryname}'
 
 var countryContainer = document.getElementById('countryContainer')
+var displayedData = document.getElementById('displayed-data')
 
 //This code collects user input and stores it into local storage 
 
-const addToStorage = (ev) => {
-    ev.preventDefault();
+function getCountry(e) {
+    e.preventDefault()
+    var searched =document.getElementById("search").value
+    addToStorage(searched)
+    getCountryData(searched)
+}   
+
+const addToStorage = (searched) => {
+    
     var Countries = JSON.parse(localStorage.getItem('MyCountryList'));
     if (Countries === null) {
         Countries = []
     }
     let userInfo = {
         // id: Date.now(),
-        Country: document.getElementById("search").value
+        Country: searched
     }
     //let userInfo = document.getElementById('search').value
     Countries.push(userInfo);
     document.querySelector('form').reset();
-    console.log(Countries)
+
 
     //saving to localStorage
     localStorage.setItem('MyCountryList', JSON.stringify(Countries));
@@ -27,15 +35,16 @@ const addToStorage = (ev) => {
     //This code appends localStorage data to page
 
 
-    displayData();
+    showData();
 
 }
 
-let displayData = () => {
+let showData = () => {
     countryContainer.innerHTML = '';
     var info = JSON.parse(localStorage.getItem('MyCountryList'));
-    // for (var i = 0; i < info.length; i++){
-    // console.log('Country Name: ', JSON.parse(info));
+    if (info === null) {
+        return
+    }
     var countryCard = document.createElement('div')
     countryCard.setAttribute('class', 'card')
     countryContainer.append(countryCard)
@@ -52,18 +61,30 @@ let displayData = () => {
     }
 }
 
-displayData()
+showData()
 
 function getCountryData(id) {
     fetch(APIUrl + id)
         .then((response) => response.json())
         .then(function (data) {
-            console.log('data', data);
+            
+            console.log(`${id}'s data`, data);
+            displayedData.textContent=''
+
+            var currentCountry = document.createElement('h1')
+            currentCountry.textContent= data[0].name.common
+            displayedData.prepend(currentCountry)
+
+            var flag = document.createElement('img')
+            flag.setAttribute('src', data[0].flags.png)
+            displayedData.append(flag)
+
+            // display data
         })
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById("btn").addEventListener('click', addToStorage);
+    document.getElementById("btn").addEventListener('click', getCountry);
 });
 
 
