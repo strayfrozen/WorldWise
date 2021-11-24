@@ -22,9 +22,9 @@ async function fetchData(countries) {
     let data = await response.json()
     console.log(data)
 
-    // let detailUrl = data.deaths.detail
-    // let detailResponse = await fetch(detailUrl)
-    // let detailData = await detailResponse.json()
+    let gMapUrl = data.maps.google
+    let gMapResponse = await fetch(gMapUrl)
+    let gMapData = await gMapResponse.json()
     // console.log('detailData: ', detailData);
     // console.log(detailData[0]);
     // var dataElem = document.createElement('div')
