@@ -3,7 +3,6 @@ var APIUrl = "https://restcountries.com/v3.1/name/{countryname}";
 
 var countryContainer = document.getElementById('countryContainer')
 var displayedData = document.getElementById('cell1')
-
 var displayedDataName = document.getElementById('cell4')
 
 var displayedDataCoatOfArms = document.getElementById('cell5')
@@ -16,6 +15,7 @@ var displayedDataCapital = document.getElementById("cell3")
 
 var displayedDataMaps = document.getElementById("displayed-data-maps");
 
+const clearBtn = document.getElementById('clearBtn')
 //This code collects user input and stores it into local storage
 
 function getCountry(e) {
@@ -46,6 +46,12 @@ const addToStorage = (searched) => {
 
   showData();
 };
+clearBtn.addEventListener('click', function () {
+  localStorage.clear()
+  console.log('clearBtn');
+})
+
+
 
 let showData = () => {
   countryContainer.innerHTML = "";
@@ -70,10 +76,6 @@ let showData = () => {
 };
 
 showData();
-
-// const array = Object.entries(data.currencies)
-// const value = array[0]
-// console.log(value[1].name);
 
 function getCountryData(id) {
   fetch(APIUrl + id)

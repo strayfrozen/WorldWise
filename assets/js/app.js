@@ -15,13 +15,13 @@ var displayedDataMaps = document.getElementById("displayed-data-maps");
 
 //Ip address api
 async function fetchIPData() {
-    let response = await fetch('https://api.ipregistry.co/?key=tryout')
-    console.log(response.url);
-    let userData = await response.json()
-    console.log(userData);
-    console.log(userData.location.country.name);
-    const countryIp = userData.location.country.name;
-    IPinBrowser = fetch(`https://restcountries.com/v3.1/name/${countryIp}`)
+    // let response = await fetch('https://api.ipregistry.co/?key=tryout')
+    // console.log(response.url);
+    // let userData = await response.json()
+    // console.log(userData);
+    // console.log(userData.location.country.name);
+    // const countryIp = userData.location.country.name;
+
 }
 
 fetchIPData()
