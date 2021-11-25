@@ -4,6 +4,10 @@ var countryContainer = document.getElementById('countryContainer')
 var displayedData = document.getElementById('displayed-data-flag')
 var displayedDataName = document.getElementById('displayed-data-name')
 var displayedDataCoatOfArms = document.getElementById('displayed-data-coatOfArms')
+var displayedDataLanguages = document.getElementById('displayed-data-languages')
+var displayedDataPopulation = document.getElementById('displayed-data-population')
+
+var displayedDataCurrency = document.getElementById("displayed-data-currency")
 
 //This code collects user input and stores it into local storage 
 
@@ -74,6 +78,9 @@ function getCountryData(id) {
             displayedData.textContent=''
             displayedDataName.textContent=''
             displayedDataCoatOfArms.textContent=''
+            displayedDataLanguages.textContent=''
+            displayedDataPopulation.textContent=''
+            displayedDataCurrency.textContent=''
 
             var currentCountry = document.createElement('h1')
             currentCountry.textContent= data[0].name.common
@@ -86,6 +93,18 @@ function getCountryData(id) {
             var coatOfArms = document.createElement('img')
             coatOfArms.setAttribute('src', data[0].flags.png)
             displayedDataCoatOfArms.append(coatOfArms)
+
+            var languages = document.createElement('h1')
+            languages.setAttribute('src', data[0].languages)
+            displayedDataLanguages.append(languages)
+
+            var pop = document.createElement('p')
+            pop.textContent = data[0].population
+            displayedDataPopulation.append('People: ', pop)
+
+            var currency = document.createElement('p')
+            currency .setAttribute('src', data[0].population)
+            displayedDataCurrency.append( pop)
 
             // display data
         })
