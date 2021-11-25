@@ -9,6 +9,8 @@ var displayedDataPopulation = document.getElementById('displayed-data-population
 
 var displayedDataCurrency = document.getElementById("displayed-data-currency")
 
+var displayedDataCapital = document.getElementById("displayed-data-capital")
+
 //This code collects user input and stores it into local storage 
 
 function getCountry(e) {
@@ -81,9 +83,10 @@ function getCountryData(id) {
             displayedDataLanguages.textContent=''
             displayedDataPopulation.textContent=''
             displayedDataCurrency.textContent=''
+            displayedDataCapital.textContent=''
 
             var currentCountry = document.createElement('h1')
-            currentCountry.textContent= data[0].name.common
+            currentCountry.textContent = data[0].name.common
             displayedDataName.prepend(currentCountry)
 
             var flag = document.createElement('img')
@@ -94,17 +97,22 @@ function getCountryData(id) {
             coatOfArms.setAttribute('src', data[0].flags.png)
             displayedDataCoatOfArms.append(coatOfArms)
 
-            var languages = document.createElement('h1')
-            languages.setAttribute('src', data[0].languages)
-            displayedDataLanguages.append(languages)
+            var language = document.createElement('h1')
+            language.textContent = data[0].languages
+            displayedDataLanguages.append(language)
 
-            var pop = document.createElement('p')
+            var pop = document.createElement('h1')
             pop.textContent = data[0].population
             displayedDataPopulation.append('People: ', pop)
 
-            var currency = document.createElement('p')
-            currency .setAttribute('src', data[0].population)
-            displayedDataCurrency.append( pop)
+            var currency = document.createElement('h1')
+            currency.textContent = data[0].currencies.USD
+            displayedDataCurrency.append(currency)
+
+            var capital = document.createElement('h1')
+            capital.textContent = data[0].capital[0]
+            displayedDataCapital.append(capital)
+
 
             // display data
         })
