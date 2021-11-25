@@ -69,6 +69,7 @@ a {
 }
 
 #grid-wrapper {
+  padding: 40px;
   display: grid;
   grid-template-columns: 256px 1fr 1fr;
   grid-gap: 32px;
