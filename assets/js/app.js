@@ -78,8 +78,8 @@ async function fetchData(countries) {
     console.log(value[1]);
 
     var currency = document.createElement('h1')
-    currency.textContent =
-        displayedDataCurrency.append(currencies)
+    currency.textContent = value[1].name
+    displayedDataCurrency.append(currency)
 
     var capital = document.createElement("h1");
     capital.textContent = data.capital[0];
