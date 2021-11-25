@@ -1,3 +1,4 @@
+//Variables
 var APIUrl = 'https://restcountries.com/v3.1/name/{countryname}'
 
 var countryContainer = document.getElementById('countryContainer')
@@ -10,6 +11,8 @@ var displayedDataPopulation = document.getElementById('displayed-data-population
 var displayedDataCurrency = document.getElementById("displayed-data-currency")
 
 var displayedDataCapital = document.getElementById("displayed-data-capital")
+
+var displayedDataMaps = document.getElementById("displayed-data-maps")
 
 //This code collects user input and stores it into local storage 
 
@@ -84,6 +87,7 @@ function getCountryData(id) {
             displayedDataPopulation.textContent=''
             displayedDataCurrency.textContent=''
             displayedDataCapital.textContent=''
+            displayedDataMaps.textContent=''
 
             var currentCountry = document.createElement('h1')
             currentCountry.textContent = data[0].name.common
@@ -97,24 +101,25 @@ function getCountryData(id) {
             coatOfArms.setAttribute('src', data[0].flags.png)
             displayedDataCoatOfArms.append(coatOfArms)
 
-            var language = document.createElement('h1')
+         /*   var language = document.createElement('h1')
             language.textContent = data[0].languages
-            displayedDataLanguages.append(language)
+            displayedDataLanguages.append(language)*/
 
             var pop = document.createElement('h1')
             pop.textContent = data[0].population
             displayedDataPopulation.append('People: ', pop)
 
-            var currency = document.createElement('h1')
+         /*   var currency = document.createElement('h1')
             currency.textContent = data[0].currencies.USD
-            displayedDataCurrency.append(currency)
+            displayedDataCurrency.append(currency)*/
 
             var capital = document.createElement('h1')
             capital.textContent = data[0].capital[0]
             displayedDataCapital.append(capital)
 
-
-            // display data
+         /*   var map = document.createElement('img')
+            map.setAttribute('src', data[0].maps.googleMaps)
+            displayedDataMaps.append(map)*/
         })
 }
 
