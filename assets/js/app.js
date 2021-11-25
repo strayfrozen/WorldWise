@@ -1,8 +1,10 @@
-// const search = document.querySelector('.search-button')
+async function fetchData() {
+    let response = await fetch('https://api.ipregistry.co/?key=tryout')
+    console.log(response.url);
+    let userData = await response.json()
+    console.log(userData);
+    console.log(userData.location.country.name
+    );
+}
 
-// search.addEventListener('click', function (event) {
-//     event.preventDefault()
-//     const input = document.querySelector('#search').value
-
-// //     fetchData(input)
-// // }
+fetchData()

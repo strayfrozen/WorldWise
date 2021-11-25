@@ -71,9 +71,7 @@ let showData = () => {
 
 showData();
 
-// const array = Object.entries(data.currencies)
-// const value = array[0]
-// console.log(value[1].name);
+
 
 function getCountryData(id) {
   fetch(APIUrl + id)
@@ -130,15 +128,21 @@ fetch(APIUrl + id)
 
       var language = document.createElement('h1')
       language.textContent = Object.values(data[0].languages)
-      displayedDataLanguages.append(language)
+      displayedDataLanguages.append('Languages:', language)
 
       var pop = document.createElement("h1");
       pop.textContent = data[0].population;
       displayedDataPopulation.append("People: ", pop);
 
+      const array = Object.entries(id.currencies)
+      console.log(array);
+      const value = array[0]
+      console.log(value.name);
+
+
       var currency = document.createElement('h1')
-      currency.textContent = value[1].name
-      displayedDataCurrency.append(currency)
+      currency.textContent =
+        displayedDataCurrency.append(currencies)
 
       var capital = document.createElement("h1");
       capital.textContent = data[0].capital[0];
