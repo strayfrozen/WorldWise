@@ -1,8 +1,8 @@
-const search = document.querySelector('.search-button')
+// const search = document.querySelector('.search-button')
 
-search.addEventListener('click', function (event) {
-    event.preventDefault()
-    const input = document.querySelector('#search').value
+// search.addEventListener('click', function (event) {
+//     event.preventDefault()
+//     const input = document.querySelector('#search').value
 
-//     fetchData(input)
-// }
+// //     fetchData(input)
+// // }

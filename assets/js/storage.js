@@ -71,70 +71,74 @@ let showData = () => {
 
 showData();
 
+// const array = Object.entries(data.currencies)
+// const value = array[0]
+// console.log(value[1].name);
+
 function getCountryData(id) {
-    fetch(APIUrl + id)
-        .then((response) => response.json())
-        .then(function (data) {
-            
-            console.log(`${id}'s data`, data);
-            displayedData.textContent=''
-            displayedDataName.textContent=''
-            displayedDataCoatOfArms.textContent=''
-            displayedDataLanguages.textContent=''
-            displayedDataPopulation.textContent=''
-            displayedDataCurrency.textContent=''
-            displayedDataCapital.textContent=''
-            displayedDataMaps.textContent=''
-
-            var currentCountry = document.createElement('h1')
-            currentCountry.textContent = data[0].name.common
-            displayedDataName.prepend(currentCountry)
-
-            var flag = document.createElement('img')
-            flag.setAttribute('src', data[0].flags.png)
-            displayedData.append(flag)
-
-            var coatOfArms = document.createElement('img')
-            coatOfArms.setAttribute('src', data[0].coatOfArms.png)
-            displayedDataCoatOfArms.append(coatOfArms)
-
-         /*   var language = document.createElement('h1')
   fetch(APIUrl + id)
     .then((response) => response.json())
     .then(function (data) {
+
       console.log(`${id}'s data`, data);
-      displayedData.textContent = "";
-      displayedDataName.textContent = "";
-      displayedDataCoatOfArms.textContent = "";
-      displayedDataLanguages.textContent = "";
-      displayedDataPopulation.textContent = "";
-      displayedDataCurrency.textContent = "";
-      displayedDataCapital.textContent = "";
-      displayedDataMaps.textContent = "";
+      displayedData.textContent = ''
+      displayedDataName.textContent = ''
+      displayedDataCoatOfArms.textContent = ''
+      displayedDataLanguages.textContent = ''
+      displayedDataPopulation.textContent = ''
+      displayedDataCurrency.textContent = ''
+      displayedDataCapital.textContent = ''
+      displayedDataMaps.textContent = ''
 
-      var currentCountry = document.createElement("h1");
-      currentCountry.textContent = data[0].name.common;
-      displayedDataName.prepend(currentCountry);
+      var currentCountry = document.createElement('h1')
+      currentCountry.textContent = data[0].name.common
+      displayedDataName.prepend(currentCountry)
 
-      var flag = document.createElement("img");
-      flag.setAttribute("src", data[0].coatOfArms.png);
-      displayedData.append(flag);
+      var flag = document.createElement('img')
+      flag.setAttribute('src', data[0].flags.png)
+      displayedData.append(flag)
 
-      var coatOfArms = document.createElement("img");
-      coatOfArms.setAttribute("src", data[0].flags.png);
-      displayedDataCoatOfArms.append(coatOfArms);
+      var coatOfArms = document.createElement('img')
+      coatOfArms.setAttribute('src', data[0].coatOfArms.png)
+      displayedDataCoatOfArms.append(coatOfArms)
 
       /*   var language = document.createElement('h1')
-            language.textContent = data[0].languages
-            displayedDataLanguages.append(language)*/
+fetch(APIUrl + id)
+ .then((response) => response.json())
+ .then(function (data) {
+   console.log(`${id}'s data`, data);
+   displayedData.textContent = "";
+   displayedDataName.textContent = "";
+   displayedDataCoatOfArms.textContent = "";
+   displayedDataLanguages.textContent = "";
+   displayedDataPopulation.textContent = "";
+   displayedDataCurrency.textContent = "";
+   displayedDataCapital.textContent = "";
+   displayedDataMaps.textContent = "";
+
+   var currentCountry = document.createElement("h1");
+   currentCountry.textContent = data[0].name.common;
+   displayedDataName.prepend(currentCountry);
+
+   var flag = document.createElement("img");
+   flag.setAttribute("src", data[0].coatOfArms.png);
+   displayedData.append(flag);
+
+   var coatOfArms = document.createElement("img");
+   coatOfArms.setAttribute("src", data[0].flags.png);
+   displayedDataCoatOfArms.append(coatOfArms);*/
+
+      var language = document.createElement('h1')
+      language.textContent = Object.values(data[0].languages)
+      displayedDataLanguages.append(language)
 
       var pop = document.createElement("h1");
       pop.textContent = data[0].population;
       displayedDataPopulation.append("People: ", pop);
 
-      /*   var currency = document.createElement('h1')
-            currency.textContent = data[0].currencies.USD
-            displayedDataCurrency.append(currency)*/
+      var currency = document.createElement('h1')
+      currency.textContent = value[1].name
+      displayedDataCurrency.append(currency)
 
       var capital = document.createElement("h1");
       capital.textContent = data[0].capital[0];
