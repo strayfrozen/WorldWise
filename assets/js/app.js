@@ -25,19 +25,67 @@ async function fetchIPData() {
 }
 
 fetchIPData()
+
 // searchBar
 const search = document.querySelector('.search-button')
 search.addEventListener('click', function (event) {
     event.preventDefault()
     const input = document.querySelector('#search').value
 
+    //collects data from search bar
     fetchData(input)
 });
 
 //CountriesApi
 async function fetchData(countries) {
     let response = await fetch(`https://restcountries.com/v3.1/name/${countries}`)
-    let data = await response.json()
+    let [data] = await response.json()
     console.log(data)
+
+    displayedData.textContent = ''
+    displayedDataName.textContent = ''
+    displayedDataCoatOfArms.textContent = ''
+    displayedDataLanguages.textContent = ''
+    displayedDataPopulation.textContent = ''
+    displayedDataCurrency.textContent = ''
+    displayedDataCapital.textContent = ''
+    displayedDataMaps.textContent = ''
+
+    var currentCountry = document.createElement('h1')
+    currentCountry.textContent = data.name.common
+    displayedDataName.prepend(currentCountry)
+
+    var flag = document.createElement('img')
+    flag.setAttribute('src', data.flags.png)
+    displayedData.append(flag)
+
+    var coatOfArms = document.createElement('img')
+    coatOfArms.setAttribute('src', data.coatOfArms.png)
+    displayedDataCoatOfArms.append(coatOfArms)
+
+
+    var language = document.createElement('h1')
+    language.textContent = Object.values(data.languages)
+    displayedDataLanguages.append('Languages', language)
+
+    var pop = document.createElement("h1");
+    pop.textContent = data.population;
+    displayedDataPopulation.append("People: ", pop);
+
+
+    const array = Object.entries(data.currencies)
+    const value = array[0]
+    console.log(value[1]);
+
+    var currency = document.createElement('h1')
+    currency.textContent =
+        displayedDataCurrency.append(currencies)
+
+    var capital = document.createElement("h1");
+    capital.textContent = data.capital[0];
+    displayedDataCapital.append(capital);
+
+
+
 
 }
