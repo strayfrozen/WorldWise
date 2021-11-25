@@ -2,15 +2,17 @@
 var APIUrl = 'https://restcountries.com/v3.1/name/{countryname}'
 
 var countryContainer = document.getElementById('countryContainer')
-var displayedData = document.getElementById('displayed-data-flag')
-var displayedDataName = document.getElementById('displayed-data-name')
-var displayedDataCoatOfArms = document.getElementById('displayed-data-coatOfArms')
+var displayedData = document.getElementById('cell1')
+
+var displayedDataName = document.getElementById('cell4')
+
+var displayedDataCoatOfArms = document.getElementById('cell5')
 var displayedDataLanguages = document.getElementById('displayed-data-languages')
-var displayedDataPopulation = document.getElementById('displayed-data-population')
+var displayedDataPopulation = document.getElementById('cell6')
 
 var displayedDataCurrency = document.getElementById("displayed-data-currency")
 
-var displayedDataCapital = document.getElementById("displayed-data-capital")
+var displayedDataCapital = document.getElementById("cell3")
 
 var displayedDataMaps = document.getElementById("displayed-data-maps")
 
@@ -94,11 +96,11 @@ function getCountryData(id) {
             displayedDataName.prepend(currentCountry)
 
             var flag = document.createElement('img')
-            flag.setAttribute('src', data[0].coatOfArms.png)
+            flag.setAttribute('src', data[0].flags.png)
             displayedData.append(flag)
 
             var coatOfArms = document.createElement('img')
-            coatOfArms.setAttribute('src', data[0].flags.png)
+            coatOfArms.setAttribute('src', data[0].coatOfArms.png)
             displayedDataCoatOfArms.append(coatOfArms)
 
          /*   var language = document.createElement('h1')
