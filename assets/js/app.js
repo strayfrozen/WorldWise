@@ -21,6 +21,8 @@ async function fetchIPData() {
     console.log(userData);
     console.log(userData.location.country.name);
     const countryIp = userData.location.country.name;
+
+    //collects data from Ip address and displays it
     fetchData(countryIp)
 }
 
@@ -28,11 +30,12 @@ fetchIPData()
 
 // searchBar
 const search = document.querySelector('.search-button')
+
 search.addEventListener('click', function (event) {
     event.preventDefault()
     const input = document.querySelector('#search').value
 
-    //collects data from search bar
+    //collects data from search bar and displays it
     fetchData(input)
 });
 
@@ -66,7 +69,7 @@ async function fetchData(countries) {
 
     var language = document.createElement('h1')
     language.textContent = Object.values(data.languages)
-    displayedDataLanguages.append('Languages', language)
+    displayedDataLanguages.append('Languages:', language)
 
     var pop = document.createElement("h1");
     pop.textContent = data.population;
@@ -74,18 +77,13 @@ async function fetchData(countries) {
 
 
     const array = Object.entries(data.currencies)
-    const value = array[0]
-    console.log(value[1]);
+    const value = array[0];
 
-    var currency = document.createElement('h1')
-    currency.textContent = value[1].name
-    displayedDataCurrency.append(currency)
+    var currency = document.createElement('h1');
+    currency.textContent = `${value[1].name} ${value[1].symbol}`;
+    displayedDataCurrency.append('currency:', currency);
 
     var capital = document.createElement("h1");
     capital.textContent = data.capital[0];
     displayedDataCapital.append(capital);
-
-
-
-
 }
