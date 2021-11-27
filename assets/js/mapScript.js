@@ -26,6 +26,7 @@ async function fetchIPData() {
         .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
         .openPopup();
 
+    map.panTo(new L.LatLng(coordLat, coordLong));
 }
 
 fetchIPData()
