@@ -3,7 +3,6 @@ var APIUrl = "https://restcountries.com/v3.1/name/{countryname}";
 
 var countryContainer = document.getElementById('countryContainer')
 var displayedData = document.getElementById('cell1')
-
 var displayedDataName = document.getElementById('cell4')
 
 var displayedDataCoatOfArms = document.getElementById('cell5')
@@ -16,6 +15,7 @@ var displayedDataCapital = document.getElementById("cell3")
 
 var displayedDataMaps = document.getElementById("displayed-data-maps");
 
+const clearBtn = document.getElementById('clearBtn')
 //This code collects user input and stores it into local storage
 
 function getCountry(e) {
@@ -46,6 +46,12 @@ const addToStorage = (searched) => {
 
   showData();
 };
+clearBtn.addEventListener('click', function () {
+  localStorage.clear()
+  console.log('clearBtn');
+})
+
+
 
 let showData = () => {
   countryContainer.innerHTML = "";
@@ -72,73 +78,77 @@ let showData = () => {
 showData();
 
 function getCountryData(id) {
-    fetch(APIUrl + id)
-        .then((response) => response.json())
-        .then(function (data) {
-            
-            console.log(`${id}'s data`, data);
-            displayedData.textContent=''
-            displayedDataName.textContent=''
-            displayedDataCoatOfArms.textContent=''
-            displayedDataLanguages.textContent=''
-            displayedDataPopulation.textContent=''
-            displayedDataCurrency.textContent=''
-            displayedDataCapital.textContent=''
-            displayedDataMaps.textContent=''
-
-            var currentCountry = document.createElement('h1')
-            currentCountry.textContent = data[0].name.common
-            displayedDataName.prepend(currentCountry)
-
-            var flag = document.createElement('img')
-            flag.setAttribute('src', data[0].flags.png)
-            displayedData.append(flag)
-
-            var coatOfArms = document.createElement('img')
-            coatOfArms.setAttribute('src', data[0].coatOfArms.png)
-            displayedDataCoatOfArms.append(coatOfArms)
-
-         /*   var language = document.createElement('h1')
   fetch(APIUrl + id)
     .then((response) => response.json())
     .then(function (data) {
+
       console.log(`${id}'s data`, data);
-      displayedData.textContent = "";
-      displayedDataName.textContent = "";
-      displayedDataCoatOfArms.textContent = "";
-      displayedDataLanguages.textContent = "";
-      displayedDataPopulation.textContent = "";
-      displayedDataCurrency.textContent = "";
-      displayedDataCapital.textContent = "";
-      displayedDataMaps.textContent = "";
+      // displayedData.textContent = ''
+      // displayedDataName.textContent = ''
+      // displayedDataCoatOfArms.textContent = ''
+      // displayedDataLanguages.textContent = ''
+      // displayedDataPopulation.textContent = ''
+      // displayedDataCurrency.textContent = ''
+      // displayedDataCapital.textContent = ''
+      // displayedDataMaps.textContent = ''
 
-      var currentCountry = document.createElement("h1");
-      currentCountry.textContent = data[0].name.common;
-      displayedDataName.prepend(currentCountry);
+      // var currentCountry = document.createElement('h1')
+      // currentCountry.textContent = data[0].name.common
+      // displayedDataName.prepend(currentCountry)
 
-      var flag = document.createElement("img");
-      flag.setAttribute("src", data[0].coatOfArms.png);
-      displayedData.append(flag);
+      // var flag = document.createElement('img')
+      // flag.setAttribute('src', data[0].flags.png)
+      // displayedData.append(flag)
 
-      var coatOfArms = document.createElement("img");
-      coatOfArms.setAttribute("src", data[0].flags.png);
-      displayedDataCoatOfArms.append(coatOfArms);
+      // var coatOfArms = document.createElement('img')
+      // coatOfArms.setAttribute('src', data[0].coatOfArms.png)
+      // displayedDataCoatOfArms.append(coatOfArms)
 
       /*   var language = document.createElement('h1')
-            language.textContent = data[0].languages
-            displayedDataLanguages.append(language)*/
+fetch(APIUrl + id)
+ .then((response) => response.json())
+ .then(function (data) {
+   console.log(`${id}'s data`, data);
+   displayedData.textContent = "";
+   displayedDataName.textContent = "";
+   displayedDataCoatOfArms.textContent = "";
+   displayedDataLanguages.textContent = "";
+   displayedDataPopulation.textContent = "";
+   displayedDataCurrency.textContent = "";
+   displayedDataCapital.textContent = "";
+   displayedDataMaps.textContent = "";
 
-      var pop = document.createElement("h1");
-      pop.textContent = data[0].population;
-      displayedDataPopulation.append("People: ", pop);
+   var currentCountry = document.createElement("h1");
+   currentCountry.textContent = data[0].name.common;
+   displayedDataName.prepend(currentCountry);
 
-      /*   var currency = document.createElement('h1')
-            currency.textContent = data[0].currencies.USD
-            displayedDataCurrency.append(currency)*/
+   var flag = document.createElement("img");
+   flag.setAttribute("src", data[0].coatOfArms.png);
+   displayedData.append(flag);
 
-      var capital = document.createElement("h1");
-      capital.textContent = data[0].capital[0];
-      displayedDataCapital.append(capital);
+   var coatOfArms = document.createElement("img");
+   coatOfArms.setAttribute("src", data[0].flags.png);
+   displayedDataCoatOfArms.append(coatOfArms);*/
+
+      // var language = document.createElement('h1')
+      // language.textContent = Object.values(data[0].languages)
+      // displayedDataLanguages.append('Languages', language)
+
+      // var pop = document.createElement("h1");
+      // pop.textContent = data[0].population;
+      // displayedDataPopulation.append("People: ", pop);
+
+
+      // const array = Object.entries(data.currencies)
+      // console.log(array);
+
+      // var currency = document.createElement('h1')
+      // currency.textContent =
+      //   displayedDataCurrency.append(currencies)
+
+      // var capital = document.createElement("h1");
+      // capital.textContent = data[0].capital[0];
+      // displayedDataCapital.append(capital);
 
       /*   var map = document.createElement('img')
             map.setAttribute('src', data[0].maps.googleMaps)
