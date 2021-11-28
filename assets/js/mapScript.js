@@ -1,11 +1,13 @@
 
 
+//user cords
+async function fetchIPData() {
 
-//User Ip address
-navigator.geolocation.getCurrentPosition(function (position) {
-    const { latitude } = position.coords
-    const { longitude } = position.coords
-
+    let response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?llatitude=XXXXXXXXXXXX&longitude=XXXXXXXXXXXX&localityLanguage=en`)
+    let geoData = await response.json();
+    console.log(geoData);
+    const latitude = geoData.latitude
+    const longitude = geoData.longitude
 
     //leafletMap
     const map = L.map('map').setView([latitude, longitude], 13);
@@ -15,21 +17,18 @@ navigator.geolocation.getCurrentPosition(function (position) {
     }).addTo(map);
 
     let userMarker = L.marker([latitude, longitude]).addTo(map)
-        .bindPopup('You are here')
+        .bindPopup('1 You are here')
         .openPopup();
 
 
 
-
+    let userMarkerTwo = L.marker([latitude, longitude]).addTo(map)
+        .bindPopup(' 2 You are here')
+        .openPopup();
     // map.panTo(new L.LatLng());
 
-    async function fetchIPData() {
 
-        let response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?l${latitude}=XXXXXXXXXXXX&${longitude}=XXXXXXXXXXXX&localityLanguage=en`)
-        let geoData = await response.json();
-        console.log(geoData);
 
-    }
+}
 
-    fetchIPData()
-});
+fetchIPData()
