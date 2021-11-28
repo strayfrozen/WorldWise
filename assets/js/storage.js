@@ -19,145 +19,114 @@ const clearBtn = document.getElementById('clearBtn')
 //This code collects user input and stores it into local storage
 
 function getCountry(e) {
-  e.preventDefault();
-  var searched = document.getElementById("search").value;
-  addToStorage(searched);
-  getCountryData(searched);
-}
+  e.preventDefault()
+  var searched =document.getElementById("search").value
+  addToStorage(searched)
+  getCountryData(searched)
+}   
 
 const addToStorage = (searched) => {
-  var Countries = JSON.parse(localStorage.getItem("MyCountryList"));
+  
+  var Countries = JSON.parse(localStorage.getItem('MyCountryList'));
   if (Countries === null) {
-    Countries = [];
+      Countries = []
   }
   let userInfo = {
-    // id: Date.now(),
-    Country: searched,
-  };
+      // id: Date.now(),
+      Country: searched
+  }
   //let userInfo = document.getElementById('search').value
   Countries.push(userInfo);
-  document.querySelector("form").reset();
+  document.querySelector('form').reset();
+
 
   //saving to localStorage
-  localStorage.setItem("MyCountryList", JSON.stringify(Countries));
-  console.warn("added", { Countries });
+  localStorage.setItem('MyCountryList', JSON.stringify(Countries));
+  console.warn('added', { Countries });
+
 
   //This code appends localStorage data to page
 
+
   showData();
-};
-clearBtn.addEventListener('click', function () {
-  localStorage.clear()
-  console.log('clearBtn');
-})
 
-
+}
 
 let showData = () => {
-  countryContainer.innerHTML = "";
-  var info = JSON.parse(localStorage.getItem("MyCountryList"));
+  countryContainer.innerHTML = '';
+  var info = JSON.parse(localStorage.getItem('MyCountryList'));
   if (info === null) {
-    return;
+      return
   }
-  var countryCard = document.createElement("div");
-  countryCard.setAttribute("class", "card");
-  countryContainer.append(countryCard);
+  var countryCard = document.createElement('div')
+  countryCard.setAttribute('class', 'card')
+  countryContainer.append(countryCard)
   for (var i = 0; i < info.length; i++) {
-    var countryName = document.createElement("h3");
-    countryName.setAttribute("id", info[i].Country);
-    countryName.textContent = "Country Name: " + info[i].Country;
-    countryCard.prepend(countryName);
+      var countryName = document.createElement('h3')
+      countryName.setAttribute('id', info[i].Country)
+      countryName.textContent = 'Country Name: ' + info[i].Country
+      countryCard.prepend(countryName)
 
-    countryName.addEventListener("click", function (event) {
-      var clickedId = event.target.id;
-      getCountryData(clickedId);
-    });
+      countryName.addEventListener('click', function (event) {
+          var clickedId = event.target.id;
+          getCountryData(clickedId)
+      })
   }
-};
+}
 
-showData();
+showData()
 
 function getCountryData(id) {
   fetch(APIUrl + id)
-    .then((response) => response.json())
-    .then(function (data) {
+      .then((response) => response.json())
+      .then(function (data) {
+          
+          console.log(`${id}'s data`, data);
+          displayedData.textContent=''
+          displayedDataName.textContent=''
+          displayedDataCoatOfArms.textContent=''
+          displayedDataLanguages.textContent=''
+          displayedDataPopulation.textContent=''
+          displayedDataCurrency.textContent=''
+          displayedDataCapital.textContent=''
+          displayedDataMaps.textContent=''
 
-      console.log(`${id}'s data`, data);
-      // displayedData.textContent = ''
-      // displayedDataName.textContent = ''
-      // displayedDataCoatOfArms.textContent = ''
-      // displayedDataLanguages.textContent = ''
-      // displayedDataPopulation.textContent = ''
-      // displayedDataCurrency.textContent = ''
-      // displayedDataCapital.textContent = ''
-      // displayedDataMaps.textContent = ''
+          var currentCountry = document.createElement('h1')
+          currentCountry.textContent = data[0].name.common
+          displayedDataName.prepend(currentCountry)
 
-      // var currentCountry = document.createElement('h1')
-      // currentCountry.textContent = data[0].name.common
-      // displayedDataName.prepend(currentCountry)
+          var flag = document.createElement('img')
+          flag.setAttribute('src', data[0].coatOfArms.png)
+          displayedData.append(flag)
 
-      // var flag = document.createElement('img')
-      // flag.setAttribute('src', data[0].flags.png)
-      // displayedData.append(flag)
+          var coatOfArms = document.createElement('img')
+          coatOfArms.setAttribute('src', data[0].flags.png)
+          displayedDataCoatOfArms.append(coatOfArms)
 
-      // var coatOfArms = document.createElement('img')
-      // coatOfArms.setAttribute('src', data[0].coatOfArms.png)
-      // displayedDataCoatOfArms.append(coatOfArms)
+       /*   var language = document.createElement('h1')
+          language.textContent = data[0].languages
+          displayedDataLanguages.append(language)*/
 
-      /*   var language = document.createElement('h1')
-fetch(APIUrl + id)
- .then((response) => response.json())
- .then(function (data) {
-   console.log(`${id}'s data`, data);
-   displayedData.textContent = "";
-   displayedDataName.textContent = "";
-   displayedDataCoatOfArms.textContent = "";
-   displayedDataLanguages.textContent = "";
-   displayedDataPopulation.textContent = "";
-   displayedDataCurrency.textContent = "";
-   displayedDataCapital.textContent = "";
-   displayedDataMaps.textContent = "";
+          var pop = document.createElement('h1')
+          pop.textContent = data[0].population
+          displayedDataPopulation.append('People: ', pop)
 
-   var currentCountry = document.createElement("h1");
-   currentCountry.textContent = data[0].name.common;
-   displayedDataName.prepend(currentCountry);
+       /*   var currency = document.createElement('h1')
+          currency.textContent = data[0].currencies.USD
+          displayedDataCurrency.append(currency)*/
 
-   var flag = document.createElement("img");
-   flag.setAttribute("src", data[0].coatOfArms.png);
-   displayedData.append(flag);
+          var capital = document.createElement('h1')
+          capital.textContent = data[0].capital[0]
+          displayedDataCapital.append(capital)
 
-   var coatOfArms = document.createElement("img");
-   coatOfArms.setAttribute("src", data[0].flags.png);
-   displayedDataCoatOfArms.append(coatOfArms);*/
-
-      // var language = document.createElement('h1')
-      // language.textContent = Object.values(data[0].languages)
-      // displayedDataLanguages.append('Languages', language)
-
-      // var pop = document.createElement("h1");
-      // pop.textContent = data[0].population;
-      // displayedDataPopulation.append("People: ", pop);
-
-
-      // const array = Object.entries(data.currencies)
-      // console.log(array);
-
-      // var currency = document.createElement('h1')
-      // currency.textContent =
-      //   displayedDataCurrency.append(currencies)
-
-      // var capital = document.createElement("h1");
-      // capital.textContent = data[0].capital[0];
-      // displayedDataCapital.append(capital);
-
-      /*   var map = document.createElement('img')
-            map.setAttribute('src', data[0].maps.googleMaps)
-            displayedDataMaps.append(map)*/
-    });
+       /*   var map = document.createElement('img')
+          map.setAttribute('src', data[0].maps.googleMaps)
+          displayedDataMaps.append(map)*/
+      })
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("btn").addEventListener("click", getCountry);
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById("btn").addEventListener('click', getCountry);
 });
 
-//Get data to results function
+//Get data to results functio
