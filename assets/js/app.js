@@ -15,15 +15,12 @@ var displayedDataMaps = document.getElementById("displayed-data-maps");
 
 //Ip address api
 async function fetchIPData() {
-    let response = await fetch('https://api.ipregistry.co/?key=tryout')
-    console.log(response.url);
-    let userData = await response.json()
-    console.log(userData);
-    console.log(userData.location.country.name);
-    const countryIp = userData.location.country.name;
+    let response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?llatitude=XXXXXXXXXXXX&$longitude=XXXXXXXXXXXX&localityLanguage=en`)
+    let geoData = await response.json();
+    console.log(geoData);
 
     //collects data from Ip address and displays it
-    fetchData(countryIp)
+    fetchData(geoData.countryName)
 }
 
 fetchIPData()
