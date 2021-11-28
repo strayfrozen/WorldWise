@@ -1,3 +1,6 @@
+
+// const search = document.querySelector('.search-button')
+=======
 var countryContainer = document.getElementById('countryContainer')
 var displayedData = document.getElementById('cell1')
 
@@ -28,10 +31,15 @@ fetchIPData()
 // searchBar
 const search = document.querySelector('.search-button')
 
-search.addEventListener('click', function (event) {
-    event.preventDefault()
-    const input = document.querySelector('#search').value
 
+// search.addEventListener('click', function (event) {
+//     event.preventDefault()
+//     const input = document.querySelector('#search').value
+
+
+// //     fetchData(input)
+// // }
+=======
     //collects data from search bar and displays it
     fetchData(input)
 });
@@ -84,3 +92,4 @@ async function fetchData(countries) {
     capital.textContent = data.capital[0];
     displayedDataCapital.append(capital);
 }
+
