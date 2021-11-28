@@ -1,5 +1,4 @@
 
-
 //user cords
 async function fetchIPData() {
 
@@ -32,3 +31,14 @@ async function fetchIPData() {
 }
 
 fetchIPData()
+
+const searchBar = document.getElementById("searchBar")
+searchBar.addEventListener('keydown', function (e) {
+    e.keyCode === 13 ? console.log(searchBar.value) : console.log('');
+})
+
+
+
+
+
+
