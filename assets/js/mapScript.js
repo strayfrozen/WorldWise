@@ -1,4 +1,9 @@
 
+const searchBar = document.getElementById("searchBar")
+
+
+
+
 //user cords
 async function fetchIPData() {
 
@@ -26,16 +31,16 @@ async function fetchIPData() {
         .openPopup();
     // map.panTo(new L.LatLng());
 
+    searchBar.addEventListener('keydown', function (e) {
+        e.keyCode === 13 ? searchBar.value = geoData.countryName console.log(searchBar): console.log('');
+    })
+
 
 
 }
-
 fetchIPData()
 
-const searchBar = document.getElementById("searchBar")
-searchBar.addEventListener('keydown', function (e) {
-    e.keyCode === 13 ? console.log(searchBar.value) : console.log('');
-})
+
 
 
 
