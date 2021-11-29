@@ -95,8 +95,8 @@ h1 {
   grid-template-columns: 256px 1fr 1fr;
   grid-gap: 32px;
   grid-template-areas:
-    "cell1 cell4 cell4"
-    "cell2 cell4 cell4"
+    "cell1 cell4 cell7"
+    "cell2 cell4 cell7"
     "cell3 cell5 cell6";
 }
 
@@ -122,6 +122,13 @@ h1 {
 }
 #cell6 {
   grid-area: cell6;
+}
+#cell7 {
+    grid-area: cell7;
+  }
+
+.results {
+    display: none;
 }
 
 @media only screen and (max-width: 600px) {
