@@ -21,3 +21,8 @@ body,
   display: flex;
   flex-direction: left;
 }
+
+.mapSearch {
+  padding-left: 40px;
+  padding-top: 10px;
+}
