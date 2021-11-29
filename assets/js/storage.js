@@ -6,7 +6,7 @@ var displayedData = document.getElementById('cell1')
 var displayedDataName = document.getElementById('cell4')
 
 var displayedDataCoatOfArms = document.getElementById('cell5')
-var displayedDataLanguages = document.getElementById('displayed-data-languages')
+var displayedDataLanguages = document.getElementById('cell2')
 var displayedDataPopulation = document.getElementById('cell6')
 
 var displayedDataCurrency = document.getElementById("displayed-data-currency");
@@ -103,9 +103,9 @@ function getCountryData(id) {
           coatOfArms.setAttribute('src', data[0].flags.png)
           displayedDataCoatOfArms.append(coatOfArms)
 
-       /*   var language = document.createElement('h1')
-          language.textContent = data[0].languages
-          displayedDataLanguages.append(language)*/
+          var language = document.createElement('h1')
+          language.textContent = Object.values(data.languages)
+          displayedDataLanguages.append('Languages:', language)
 
           var pop = document.createElement('h1')
           pop.textContent = data[0].population
