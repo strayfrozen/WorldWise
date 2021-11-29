@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/mapStyle.css" />
+    <script src="https://use.fontawesome.com/7ed79bbb65.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- Top Navigation Bar -->
+    <nav class="navBar">
+      <a href="" class="mobile">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="#about">About Us</a>
+      <a href="map.html">Interactive Map</a>
+      <a href="index.html">Homepage</a>
+
+      <div class="mapform-group text-left">
+        <form action="/" method="GET" class="mapForm">
+          <input
+            type="text"
+            id="search"
+            name="countries"
+            class="text search-field"
+            placeholder="Enter location here!"
+          />
+          <button type="submit" class="search-button" id="searchBar">
+            <img src="assets/images/search.png" />
+          </button>
+        </form>
+      </div>
+    </nav>
+    <div id="map" class="map"></div>
+
+    <script src="assets/js/mapScript.js"></script>
+  </body>
+</html>
