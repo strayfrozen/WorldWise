@@ -27,7 +27,7 @@ Our app is intended to be an educational wellspring of knowledge about the globe
 -Chris Langford  
 -David Opoku  
 
-[GitHub Profile] (...)
+[GitHub Profile] (...)  
 [Emails] (ravenclaw946@gmail.com) (strayfrozen@yahoo.com) (DavidOpoku30@gmail.com)  
 [Project Link] (...)  
 
