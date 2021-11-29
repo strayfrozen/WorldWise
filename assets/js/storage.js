@@ -5,9 +5,11 @@ var countryContainer = document.getElementById("countryContainer");
 var displayedData = document.getElementById("cell1");
 var displayedDataName = document.getElementById("cell4");
 
+
 var displayedDataCoatOfArms = document.getElementById("cell5");
 var displayedDataLanguages = document.getElementById("cell2");
 var displayedDataPopulation = document.getElementById("cell6");
+
 
 var displayedDataCurrency = document.getElementById("cell7");
 
@@ -56,6 +58,7 @@ let showData = () => {
   countryCard.setAttribute("class", "card");
   countryContainer.append(countryCard);
   for (var i = 0; i < info.length; i++) {
+
     var countryName = document.createElement("h3");
     countryName.setAttribute("id", info[i].Country);
     countryName.textContent = "Country Name: " + info[i].Country;
@@ -65,6 +68,7 @@ let showData = () => {
       var clickedId = event.target.id;
       fetchData(clickedId);
     });
+
   }
 };
 
@@ -72,4 +76,6 @@ showData();
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btn").addEventListener("click", getCountry);
-});
+
+
+
