@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
       rel="stylesheet"
@@ -11,26 +17,44 @@
     <link rel="stylesheet" href="assets\css\style.css" />
     <title>WorldWise</title>
   </head>
-
   <body>
+    <nav class="navBar">
+      <a href="#about">About Us</a>
+      <a href="map.html">Interactive Map</a>
+      <a href="index.html">Homepage</a>
+      <button type="button" id="clearBtn">clearSearch</button>
+    </nav>
     <header class="pt-10 text-white text-center">
       <h1 class="font-bold text-9xl tracking-widest">WorldWise</h1>
-      <h3>this explains what the app does</h3>
+      <h3>Learn about about the world around you!</h3>
     </header>
-    <br>
+    <br />
     <div class="form-group text-center">
       <form action="/" method="GET" class="form">
         <input
+          type="text"
+          id="search"
           name="countries"
           class="text search-field"
           placeholder="Search Any Country Here!"
         />
-        <button type="submit" class="search-button">
+        <button type="submit" class="search-button" id="btn">
           <img src="assets/images/search.png" />
         </button>
       </form>
     </div>
+    <div class="flex flex-row" id="countryContainer"></div>
+    <hr class="mt-2 border-white h-1 bg-white overflow-hidden" />
+    <div id="results-container" class="hidden">
+      <div id="grid-wrapper" class="hidden">
+        <div class="grid-cell bg-white flag" id="cell1">1</div>
+        <div class="grid-cell bg-white language" id="cell2">2</div>
+        <div class="grid-cell bg-white capital" id="cell3">3</div>
+        <div class="grid-cell bg-white countryName" id="cell4">4</div>
+        <div class="grid-cell bg-white coatofArms" id="cell5">5</div>
+        <div class="grid-cell bg-white population" id="cell6">6</div>
 
-    <script src="assets/app.js"></script>
+    <script src="assets\js\app.js"></script>
+    <script src="assets\js\storage.js"></script>
   </body>
 </html>
