@@ -1,15 +1,8 @@
 // experiment hamburger
-<<<<<<< HEAD
 $('.menu').click(function () {
   $(this).toggleClass('active');
   return false;
 });
-=======
-$('.menu').click(function(){
-    $(this).toggleClass('active');
-    return false;
-  });
->>>>>>> 94caf209ba374257cc85ee60ec2cd409fbfed49c
 
 
 
@@ -77,7 +70,6 @@ let showData = () => {
   countryCard.setAttribute('class', 'card')
   countryContainer.append(countryCard)
   for (var i = 0; i < info.length; i++) {
-<<<<<<< HEAD
     var countryName = document.createElement('h3')
     countryName.setAttribute('id', info[i].Country)
     countryName.textContent = 'Country Name: ' + info[i].Country
@@ -87,75 +79,12 @@ let showData = () => {
       var clickedId = event.target.id;
       fetchData(clickedId)
     })
-=======
-      var countryName = document.createElement('h3')
-      countryName.setAttribute('id', info[i].Country)
-      countryName.textContent = 'Country Name: ' + info[i].Country
-      countryCard.prepend(countryName)
-
-      countryName.addEventListener('click', function (event) {
-          var clickedId = event.target.id;
-          fetchData(clickedId)
-      })
->>>>>>> 94caf209ba374257cc85ee60ec2cd409fbfed49c
   }
 }
 
 showData()
 
 /*function getCountryData(id) {
-<<<<<<< HEAD
-fetch(APIUrl + id)
-    .then((response) => response.json())
-    .then(function (data) {
-        
-        console.log(`${id}'s data`, data);
-        displayedData.textContent=''
-        displayedDataName.textContent=''
-        displayedDataCoatOfArms.textContent=''
-        displayedDataLanguages.textContent=''
-        displayedDataPopulation.textContent=''
-        displayedDataCurrency.textContent=''
-        displayedDataCapital.textContent=''
-        displayedDataMaps.textContent=''
-
-        var currentCountry = document.createElement('h1')
-        currentCountry.textContent = data[0].name.common
-        displayedDataName.prepend(currentCountry)
-
-        var flag = document.createElement('img')
-        flag.setAttribute('src', data[0].coatOfArms.png)
-        displayedData.append(flag)
-
-        var coatOfArms = document.createElement('img')
-        coatOfArms.setAttribute('src', data[0].flags.png)
-        displayedDataCoatOfArms.append(coatOfArms)
-
-        var language = document.createElement('h1')
-        language.textContent = Object.values(data.languages)
-        displayedDataLanguages.append('Languages:', language)
-
-        var pop = document.createElement('h1')
-        pop.textContent = data[0].population
-        displayedDataPopulation.append('People: ', pop)
-
-        const array = Object.entries(data.currencies)
-        const value = array[0];
-    
-        var currency = document.createElement('h1');
-        currency.textContent = `${value[1].name} ${value[1].symbol}`;
-        displayedDataCurrency.append('currency:', currency);
-    
-
-        var capital = document.createElement('h1')
-        capital.textContent = data[0].capital[0]
-        displayedDataCapital.append(capital)
-
-        var map = document.createElement('img')
-        map.setAttribute('src', data[0].maps.googleMaps)
-        displayedDataMaps.append(map)
-    })
-=======
   fetch(APIUrl + id)
       .then((response) => response.json())
       .then(function (data) {
@@ -206,7 +135,6 @@ fetch(APIUrl + id)
           map.setAttribute('src', data[0].maps.googleMaps)
           displayedDataMaps.append(map)
       })
->>>>>>> 94caf209ba374257cc85ee60ec2cd409fbfed49c
 }*/
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -214,8 +142,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-<<<<<<< HEAD
 //Get data to results functio
-=======
-//Get data to results functio
->>>>>>> 94caf209ba374257cc85ee60ec2cd409fbfed49c
