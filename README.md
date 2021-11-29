@@ -15,8 +15,8 @@ Our app is intended to be an educational wellspring of knowledge about the globe
 -Leaflet API  
 -JavaScript
 
-#Future Updates
- Travel itinerary planner / / this is pending
+#Future Updates  
+ Travel itinerary planner / / this is pending  
  Current Covid19 statistics and travel restrictions / / this is pending
  Add a Wiki API / / this is pending  
  Relevant news Information / / this is pending  
