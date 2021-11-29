@@ -1,8 +1,3 @@
-
-
-
-
-
 async function fetchIPData() {
     //user cords
     let response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?llatitude=XXXXXXXXXXXX&longitude=XXXXXXXXXXXX&localityLanguage=en`)

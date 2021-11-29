@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/mapStyle.css">
+  <link rel="stylesheet" href="assets/css/mapStyle.css" />
   <script src="https://use.fontawesome.com/7ed79bbb65.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -30,16 +30,16 @@
 
     <div class="mapform-group text-left">
       <form action="/" method="GET" class="mapForm">
-        <input type="text" id="searchBar" name="countries" class="text search-field"
-          placeholder="Enter location here!" />
-        <button type="submit" class="search-button" id="searchBtn">
+        <input type="text" id="search" name="countries" class="text search-field" placeholder="Enter location here!" />
+        <button type="submit" class="search-button" id="searchBar">
           <img src="assets/images/search.png" />
         </button>
       </form>
     </div>
   </nav>
-
   <div id="map" class="map"></div>
+
+
 
   <script src="assets/js/mapScript.js"></script>
 </body>
