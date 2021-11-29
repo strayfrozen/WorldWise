@@ -1,6 +1,5 @@
 
 // const search = document.querySelector('.search-button')
-=======
 var countryContainer = document.getElementById('countryContainer')
 var displayedData = document.getElementById('cell1')
 
@@ -39,7 +38,6 @@ const search = document.querySelector('.search-button')
 
 // //     fetchData(input)
 // // }
-=======
     //collects data from search bar and displays it
     fetchData(input)
 });
