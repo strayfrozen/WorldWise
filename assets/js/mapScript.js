@@ -32,11 +32,11 @@ async function fetchIPData() {
     // map.panTo(new L.LatLng());
 
     searchBar.addEventListener('keydown', function (e) {
-        e.keyCode === 13 ? searchBar.value = geoData.countryName console.log(searchBar): console.log('');
-    })
+        e.keyCode === 13 ? searchBar.value = geoData.countryName : console.log('');
+    }
 
 
-
+    )
 }
 fetchIPData()
 
