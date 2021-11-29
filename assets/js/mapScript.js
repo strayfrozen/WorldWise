@@ -1,8 +1,9 @@
 async function fetchIPData() {
     //user cords
     let response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?llatitude=XXXXXXXXXXXX&longitude=XXXXXXXXXXXX&localityLanguage=en`)
+
     let geoData = await response.json();
-    console.log(geoData);
+    const cName = geoData.countryName
     const latitude = geoData.latitude
     const longitude = geoData.longitude
 
@@ -28,15 +29,11 @@ async function fetchIPData() {
     }
 
     map.on('click', onMapClick);
+
+
 }
+
+
+
 fetchIPData()
-
-
-const searchBar = document.getElementById("search")
-const searchValue = searchBar.value;
-console.log(searchValue);
-// if(){}
-
-
-
 
