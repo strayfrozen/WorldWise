@@ -27,8 +27,9 @@ search.addEventListener('click', function (event) {
     fetchData(input);
 });
 //CountriesApi
-async function fetchData(country) {
-    let response = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+async function fetchData() {
+    let response = await fetch(`https://restcountries.com/v3.1/name/${countr}`);
+    console.log(data);
     let [data] = await response.json();
     resultsContainer.classList.remove('hidden');
     addToStorage(country);
@@ -55,3 +56,5 @@ async function fetchData(country) {
     displayedDataCurrency.textContent = `${currencyVal[1].name} ${currencyVal[1].symbol}`;
     displayedDataCapital.textContent = data.capital[0];
 }
+
+fetchData()

@@ -21,26 +21,21 @@ async function fetchIPData() {
     }).addTo(map);
 
     let userMarker = L.marker([latitude, longitude]).addTo(map)
-        .bindPopup('1 You are here')
+        .bindPopup(' You are here')
         .openPopup();
 
+    let popup = L.popup();
 
+    function onMapClick(e) {
 
-    let userMarkerTwo = L.marker([latitude, longitude]).addTo(map)
-        .bindPopup(' 2 You are here')
-        .openPopup();
-    // map.panTo(new L.LatLng());
-
-    searchBar.addEventListener('keydown', function (e) {
-        e.keyCode === 13 ? searchBar.value = geoData.countryName : console.log('');
+        popup.setLatLng(e.latlng)
+        popup.setContent(`You clicked the map at  ${e.latlng}`)
+            .openOn(map);
     }
 
-
-    )
+    map.on('click', onMapClick);
 }
 fetchIPData()
-
-
 
 
 
