@@ -14,10 +14,10 @@ var displayedData = document.getElementById('cell1')
 var displayedDataName = document.getElementById('cell4')
 
 var displayedDataCoatOfArms = document.getElementById('cell5')
-var displayedDataLanguages = document.getElementById('displayed-data-languages')
+var displayedDataLanguages = document.getElementById('cell2')
 var displayedDataPopulation = document.getElementById('cell6')
 
-var displayedDataCurrency = document.getElementById("displayed-data-currency");
+var displayedDataCurrency = document.getElementById("cell7");
 
 var displayedDataCapital = document.getElementById("cell3")
 
@@ -77,14 +77,14 @@ let showData = () => {
 
       countryName.addEventListener('click', function (event) {
           var clickedId = event.target.id;
-          getCountryData(clickedId)
+          fetchData(clickedId)
       })
   }
 }
 
 showData()
 
-function getCountryData(id) {
+/*function getCountryData(id) {
   fetch(APIUrl + id)
       .then((response) => response.json())
       .then(function (data) {
@@ -111,27 +111,31 @@ function getCountryData(id) {
           coatOfArms.setAttribute('src', data[0].flags.png)
           displayedDataCoatOfArms.append(coatOfArms)
 
-       /*   var language = document.createElement('h1')
-          language.textContent = data[0].languages
-          displayedDataLanguages.append(language)*/
+          var language = document.createElement('h1')
+          language.textContent = Object.values(data.languages)
+          displayedDataLanguages.append('Languages:', language)
 
           var pop = document.createElement('h1')
           pop.textContent = data[0].population
           displayedDataPopulation.append('People: ', pop)
 
-       /*   var currency = document.createElement('h1')
-          currency.textContent = data[0].currencies.USD
-          displayedDataCurrency.append(currency)*/
+          const array = Object.entries(data.currencies)
+          const value = array[0];
+      
+          var currency = document.createElement('h1');
+          currency.textContent = `${value[1].name} ${value[1].symbol}`;
+          displayedDataCurrency.append('currency:', currency);
+      
 
           var capital = document.createElement('h1')
           capital.textContent = data[0].capital[0]
           displayedDataCapital.append(capital)
 
-       /*   var map = document.createElement('img')
+          var map = document.createElement('img')
           map.setAttribute('src', data[0].maps.googleMaps)
-          displayedDataMaps.append(map)*/
+          displayedDataMaps.append(map)
       })
-}
+}*/
 
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById("btn").addEventListener('click', getCountry);
