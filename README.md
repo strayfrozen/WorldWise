@@ -3,12 +3,12 @@
 ![ww1](https://user-images.githubusercontent.com/86988180/143922437-9c90c4d9-0252-43a2-b943-07c26548ea5d.jpg)  
 
 
-#Project Description
+#Project Description  
 Our app is intended to be an educational wellspring of knowledge about the globe: we have included information such as spoken language, total population, and currency used for commerce. 
 
-#Built With
--HTML
--CSS  
+#Built With  
+-HTML  
+-CSS    
 -Tailwind  
 -REST API  
 -BigDataCloud API  
