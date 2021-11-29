@@ -1,12 +1,10 @@
 
-const searchBar = document.getElementById("searchBar")
 
 
 
 
-//user cords
 async function fetchIPData() {
-
+    //user cords
     let response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?llatitude=XXXXXXXXXXXX&longitude=XXXXXXXXXXXX&localityLanguage=en`)
     let geoData = await response.json();
     console.log(geoData);
@@ -20,10 +18,11 @@ async function fetchIPData() {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    //creates 
     let userMarker = L.marker([latitude, longitude]).addTo(map)
-        .bindPopup(' You are here')
-        .openPopup();
+    userMarker.bindPopup(' You are here')
 
+    //creates pop on click
     let popup = L.popup();
 
     function onMapClick(e) {
@@ -38,6 +37,10 @@ async function fetchIPData() {
 fetchIPData()
 
 
+const searchBar = document.getElementById("search")
+const searchValue = searchBar.value;
+console.log(searchValue);
+// if(){}
 
 
 
