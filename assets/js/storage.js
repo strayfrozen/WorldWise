@@ -1,3 +1,11 @@
+// experiment hamburger
+$('.menu').click(function(){
+    $(this).toggleClass('active');
+    return false;
+  });
+
+
+
 //Variables
 var APIUrl = "https://restcountries.com/v3.1/name/{countryname}";
 
@@ -132,5 +140,6 @@ showData()
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById("btn").addEventListener('click', getCountry);
 });
+
 
 //Get data to results functio
