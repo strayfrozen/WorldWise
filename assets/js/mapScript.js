@@ -1,11 +1,11 @@
+async function fetchIPData() {
+    //user cords
+    let response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?llatitude=XXXXXXXXXXXX&longitude=XXXXXXXXXXXX&localityLanguage=en`)
 
-
-
-//User Ip address
-navigator.geolocation.getCurrentPosition(function (position) {
-    const { latitude } = position.coords
-    const { longitude } = position.coords
-
+    let geoData = await response.json();
+    const cName = geoData.countryName
+    const latitude = geoData.latitude
+    const longitude = geoData.longitude
 
     //leafletMap
     const map = L.map('map').setView([latitude, longitude], 13);
@@ -14,22 +14,26 @@ navigator.geolocation.getCurrentPosition(function (position) {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    //creates 
     let userMarker = L.marker([latitude, longitude]).addTo(map)
-        .bindPopup('You are here')
-        .openPopup();
+    userMarker.bindPopup(' You are here')
 
+    //creates pop on click
+    let popup = L.popup();
 
+    function onMapClick(e) {
 
-
-    // map.panTo(new L.LatLng());
-
-    async function fetchIPData() {
-
-        let response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?l${latitude}=XXXXXXXXXXXX&${longitude}=XXXXXXXXXXXX&localityLanguage=en`)
-        let geoData = await response.json();
-        console.log(geoData);
-
+        popup.setLatLng(e.latlng)
+        popup.setContent(`You clicked the map at  ${e.latlng}`)
+            .openOn(map);
     }
 
-    fetchIPData()
-});
+    map.on('click', onMapClick);
+
+
+}
+
+
+
+fetchIPData()
+
