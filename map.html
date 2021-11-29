@@ -1,34 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/mapStyle.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-        crossorigin="" />
-    <script defer src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin="">
-        </script>
+    <script src="https://use.fontawesome.com/7ed79bbb65.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <!-- Top Navigation Bar -->
     <nav class="navBar">
+      <a href="" class="mobile">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="#about">About Us</a>
+      <a href="map.html">Interactive Map</a>
+      <a href="index.html">Homepage</a>
+      <!-- <form action="" class="mapSearch">
+        <input type="text" id="searchbar" placeholder="Enter location" />
+      </form> -->
+      <div class="mapform-group text-left">
+        <form action="/" method="GET" class="mapForm">
+          <input
+            type="text"
+            id="search"
+            name="countries"
+            class="text search-field"
+            placeholder="Enter location here!"
+          />
+            <button type="submit" class="search-button" id="searchBar">
+              <img src="assets/images/search.png"/>
+            </button>
+        </form>
+      </div>
+    </nav>
+    <!-- <nav class="navBar">
         <a href="#about">About Us</a>
         <a href="map.html">Interactive Map</a>
         <a href="index.html">Homepage</a>
         <button type="button" id="clearBtn"> clearSearch</button>
+<<<<<<< HEAD
     </nav>
     <input type="text" id="searchBar" name="countries" class="text search-field"
         placeholder="Search Any Country Here!" />
     <div id="map"></div>
 
+=======
+    </nav> -->
+    <!-- <form action="">
+        <input type="text" id="searchbar" placeholder="Enter location">
+
+    </form> -->
+    <div id="map" class="map"></div>
+>>>>>>> 94caf209ba374257cc85ee60ec2cd409fbfed49c
 
     <script src="assets/js/mapScript.js"></script>
-</body>
-
+  </body>
 </html>

@@ -6,6 +6,7 @@ html, body, #map {
     height: 100%;
     width: 100vw;
 }
+<<<<<<< HEAD
 .form {
     display: flex;
     flex-direction: row;
@@ -14,3 +15,18 @@ html, body, #map {
  
   
  
+=======
+
+.mapform-group {
+    margin: left;
+    width: 300px;
+    height: 60px;
+    padding-top: 10px;
+    padding-left: 20px;
+  }
+  
+  .mapForm {
+    display: flex;
+    flex-direction: left;
+  }
+>>>>>>> 94caf209ba374257cc85ee60ec2cd409fbfed49c
