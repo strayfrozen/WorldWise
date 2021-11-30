@@ -27,9 +27,9 @@ Our app is intended to be an educational wellspring of knowledge about the globe
 -Chris Langford  
 -David Opoku  
 
-[GitHub Profile] (...)  
+[GitHub Profile] (https://github.com/strayfrozen/WorldWise)  
 [Emails] (ravenclaw946@gmail.com) (strayfrozen@yahoo.com) (DavidOpoku30@gmail.com)  
-[Project Link] (...)  
+[Project Link] (https://strayfrozen.github.io/WorldWise/)   
 
 #MIT License  
 Copyright <2021>
