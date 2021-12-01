@@ -23,7 +23,6 @@ navigator.geolocation.getCurrentPosition(function (position) {
       `https://api.bigdatacloud.net/data/reverse-geocode-client?l${latitude}=XXXXXXXXXXXX&${longitude}=XXXXXXXXXXXX&localityLanguage=en`
     );
     let geoData = await response.json();
-    console.log(geoData);
   }
 
   fetchIPData();

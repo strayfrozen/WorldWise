@@ -7,17 +7,7 @@ var displayedDataName = document.getElementById("cell4");
 var displayedDataCoatOfArms = document.getElementById("cell5");
 var displayedDataPopulation = document.getElementById("cell6");
 var displayedDataCurrency = document.getElementById("cell7");
-//Ip address api
-// async function fetchIPData() {
-//   let response = await fetch(
-//     `https://api.bigdatacloud.net/data/reverse-geocode-client?llatitude=XXXXXXXXXXXX&$longitude=XXXXXXXXXXXX&localityLanguage=en`
-//   );
-//   let geoData = await response.json();
-//   console.log(geoData);
-//   //collects data from Ip address and displays it
-//   fetchData(geoData.countryName);
-// }
-// fetchIPData();
+
 // searchBar
 const search = document.querySelector(".search-button");
 search.addEventListener("click", function (event) {
