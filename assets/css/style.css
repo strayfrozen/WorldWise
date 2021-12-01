@@ -10,7 +10,6 @@ body {
 .navBar {
   overflow: hidden;
   background-color: hsla(360, 71%, 43%, 1);
-  /* box-shadow: 0 0 0 2px grey; */
 }
 .navBar a {
   float: right;
