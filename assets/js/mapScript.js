@@ -16,7 +16,14 @@ navigator.geolocation.getCurrentPosition(function (position) {
     .bindPopup("You are here")
     .openPopup();
 
-  // map.panTo(new L.LatLng());
+    var popup = L.popup();
+    function onMapClick(e) {
+        popup
+            .setLatLng(e.latlng)
+            .setContent("You clicked the map at " + e.latlng.toString())
+            .openOn(map);
+    }
+    map.on('click', onMapClick); 
 
   async function fetchIPData() {
     let response = await fetch(
